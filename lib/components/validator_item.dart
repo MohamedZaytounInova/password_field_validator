@@ -24,7 +24,7 @@ class ValidatorItemWidget extends StatelessWidget {
                     color: color,
                   )
                 : Icon(
-                    Icons.close_outlined,
+                    Icons.question_mark,
                     color: color,
                   ),
           ),
@@ -32,7 +32,7 @@ class ValidatorItemWidget extends StatelessWidget {
             padding: const EdgeInsets.only(
               left: 10,
             ),
-            child: Text('$text (${conditionValue.toString()})'),
+            child: Text('$text'),
           ),
         ],
       ),
