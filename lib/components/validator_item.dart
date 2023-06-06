@@ -20,7 +20,7 @@ class ValidatorItemWidget extends StatelessWidget {
           Container(
             child: value
                 ? Icon(
-                    Icons.check_circle_outline,
+                    Icons.check_circle,
                     color: color,
                   )
                 : Icon(
