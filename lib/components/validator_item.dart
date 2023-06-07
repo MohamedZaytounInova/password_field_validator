@@ -6,10 +6,12 @@ class ValidatorItemWidget extends StatelessWidget {
   final int conditionValue;
   final Color color;
   final bool value;
+  final Widget? checked;
+  final Widget? unChecked;
 
   const ValidatorItemWidget(
       this.text, this.conditionValue, this.color, this.value,
-      {Key? key})
+      {Key? key, this.checked, this.unChecked})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -19,14 +21,16 @@ class ValidatorItemWidget extends StatelessWidget {
         children: [
           Container(
             child: value
-                ? Icon(
-                    Icons.check_circle,
-                    color: color,
-                  )
-                : Icon(
-                    Icons.question_mark,
-                    color: color,
-                  ),
+                ? checked ??
+                    Icon(
+                      Icons.check_circle,
+                      color: color,
+                    )
+                : unChecked ??
+                    Icon(
+                      Icons.question_mark,
+                      color: color,
+                    ),
           ),
           Container(
             padding: const EdgeInsets.only(

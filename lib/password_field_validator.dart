@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:password_field_validator/components/validator_item.dart';
 import 'package:password_field_validator/validator/enum_valdation.dart';
-
 import 'package:password_field_validator/validator/validator.dart';
 import 'package:password_field_validator/validator/validator_message.dart';
 
@@ -11,7 +10,8 @@ class PasswordFieldValidator extends StatefulWidget {
   final int lowercaseCharCount;
   final int numericCharCount;
   final int specialCharCount;
-
+  final Widget? checked;
+  final Widget? unChecked;
   final Color defaultColor;
   final Color successColor;
   final Color failureColor;
@@ -38,7 +38,9 @@ class PasswordFieldValidator extends StatefulWidget {
       this.uppercaseCharMessage,
       this.lowercaseMessage,
       this.numericCharMessage,
-      this.specialCharacterMessage})
+      this.specialCharacterMessage,
+      this.checked,
+      this.unChecked})
       : super(key: key);
 
   @override
@@ -157,6 +159,8 @@ class _PasswordFieldValidatorState extends State<PasswordFieldValidator> {
                   ? widget.successColor
                   : widget.failureColor,
           entry.value,
+          checked: widget.checked,
+          unChecked: widget.unChecked,
         );
       }).toList(),
     );
